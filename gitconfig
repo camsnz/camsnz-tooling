@@ -1,0 +1,16 @@
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  branches = branch --list
+  all = log --all --branches --remotes --tags --graph --oneline --decorate
+  bls = log --branches --remotes --tags --graph --oneline --decorate
+  ls = log --pretty=format:\"%C(Yellow)%h%Creset %ad %C(red)|%Creset %C(yellow)%s%C(green)%d%Creset [%C(cyan)%an%Creset]\" --graph --date=short --decorate=short
+  no-edit = commit --amend --no-edit
+  log = log --graph --date=short --decorate=short
+  type = cat-file -t
+  dump = cat-file -p
+
+[push]
+	default = simple
