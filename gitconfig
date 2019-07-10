@@ -3,12 +3,21 @@
   ci = commit
   st = status
   br = branch
-  branches = branch --list
-  all = log --all --branches --remotes --tags --graph --oneline --decorate
-  bls = log --branches --remotes --tags --graph --oneline --decorate
-  ls = log --pretty=format:\"%C(Yellow)%h%Creset %ad %C(red)|%Creset %C(yellow)%s%C(green)%d%Creset [%C(cyan)%an%Creset]\" --graph --date=short --decorate=short
+
   no-edit = commit --amend --no-edit
   log = log --graph --date=short --decorate=short
+  branches = branch --aist
+
+  all = log --all --branches --remotes --tags --graph --oneline --decorate
+  ls = log --pretty=format:\"%C(Yellow)%h%Creset %ad %C(red)|%Creset %C(yellow)%s%C(green)%d%Creset [%C(cyan)%an%Creset]\" --graph --date=short --decorate=short
+  lss = log --graph --branches --remotes --oneline --abbrev-commit --decorate --date=relative --all
+
+  #showstash = "!f() { if [ "$1x" == "x" ]; then N=0; else N=$1; fi; \
+  #                        git diff stash@{$N} stash@{$N}~1 && \
+  #                echo \"> git diff stash@{$N} stash@{$N}~1\"; \
+  #             }; f"
+  #shsh = "!f() { if [ "$1x" == "x" ]; then N=0; else N=$1; fi; git diff stash@{$N} stash@{$N}~1; }; f"
+
   type = cat-file -t
   dump = cat-file -p
 
